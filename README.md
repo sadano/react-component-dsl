@@ -1,1 +1,1 @@
-# react-lumen-component-generator
+# react-component-generator
