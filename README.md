@@ -138,8 +138,8 @@ export default ItemInfo;
 
 ## Customized templates.
 If you want to use own templates, please replace the template files.
-- template.container.erb
-- template.component.erb
+- template_container.erb
+- template_component.erb
 
 ## Dependent packages.
 - react
