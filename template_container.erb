@@ -1,0 +1,55 @@
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { withRouter } from "react-router-dom";
+import styled from "styled-components";
+<% @children.each do |child| -%>
+import <%= child.name %> from "../../components/<%= get_url_path %><%= child.js_name %>";
+<% end -%>
+
+const Styled<%= @name %> = styled.div`
+`;
+
+class <%= @name %> extends Component {
+  constructor(props) {
+    super(props);
+  }
+
+  componentDidMount() {
+  }
+
+  compounentUnmount() {
+  }
+
+  componentDidUpdate() {
+  }
+
+  render() {
+    const {
+    } = this.props;
+
+    return (
+      <Styled<%= @name %>>
+<% @children.each do |child| -%>
+        <<%= child.name %> />
+<% end -%>
+      </Styled<%= @name %>>
+    );
+  }
+}
+
+const mapStateToProps = state => {
+  return {...state};
+};
+
+const actionCreators = {
+};
+
+const enhance = C => {
+  const connected = connect(
+    mapStateToProps,
+    actionCreators
+  )(C);
+  return withRouter(connected);
+};
+
+export default enhance(<%= @name %>);
