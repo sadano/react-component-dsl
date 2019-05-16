@@ -1,0 +1,22 @@
+import React from "react";
+import styled from "styled-components";
+<% @children.each do |child| -%>
+import <%= child.name %> from "./<%= child.js_name %>";
+<% end -%>
+
+const Styled<%= @name %> = styled.div`
+`;
+
+const <%= @name %> = (props) => {
+    const {
+    } = props;
+    return (
+        <Styled<%= @name %> className="<%= @class_name %>">
+<% @children.each do |child| -%>
+            <<%= child.name %> />
+<% end -%>
+        </Styled<%= @name %>>
+    );
+};
+
+export default <%= @name %>;
